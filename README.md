@@ -26,5 +26,6 @@ O sistema quebra a linearidade do desenvolvimento de software tradicional atrav�
    ```bash
    python -m pip install -r requirements.txt
 
+## Desenvolvido por Elder Moura como um estudo avançado sobre coordenação, comunicação e tomada de decisão em sistemas multiagentes.
 
-   Desenvolvido por Elder Moura como um estudo avançado sobre coordenação, comunicação e tomada de decisão em sistemas multiagentes.
+  
