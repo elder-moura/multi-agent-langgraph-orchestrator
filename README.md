@@ -31,13 +31,14 @@ graph TD
     OutGuard --> EndSuccess[Fim: Entrega Higienizada LGPD]
 
 
-Nó Pesquisador (Persona Concomitante): Assume o papel da persona selecionada e rascunha a análise técnica profunda. Possui capacidade cognitiva de avaliar a sua própria falta de dados históricos (degradação de contexto) e solicitar acesso à internet.
+**Nó Pesquisador (Persona Concomitante)**: Assume o papel da persona selecionada e rascunha a análise técnica profunda. Possui capacidade cognitiva de avaliar a sua própria falta de dados históricos (degradação de contexto) e solicitar acesso à internet.
 
-Nó de Ferramentas (Tool Calling): Executa buscas assíncronas em tempo real na web via motor DuckDuckGo para alimentar a memória do grafo com factos atualizados.
+**Nó de Ferramentas (Tool Calling)**: Executa buscas assíncronas em tempo real na web via motor DuckDuckGo para alimentar a memória do grafo com factos atualizados.
 
-Nó Revisor (Auditoria e Qualidade): Atua como uma barreira rígida de controlo de qualidade, analisando criticamente o texto gerado e emitindo pareceres estruturados em JSON. Se houver falhas, o roteador condicional devolve a tarefa ao nó inicial, gerando um loop de auto-correção.
+**Nó Revisor (Auditoria e Qualidade)**: Atua como uma barreira rígida de controlo de qualidade, analisando criticamente o texto gerado e emitindo pareceres estruturados em JSON. Se houver falhas, o roteador condicional devolve a tarefa ao nó inicial, gerando um loop de auto-correção.
 
 ## 🛡️ **Camada de Governança e Segurança: Guardrails**
+
 O projeto foi construído sob os pilares da segurança cibernética e conformidade regulatória com a LGPD (Lei Geral de Proteção de Dados):
 
 Input Guardrail (Filtro de Entrada): Intercepta o prompt do utilizador antes do processamento da LLM, neutralizando ataques de Prompt Injection / Jailbreak (tentativas de subverter as regras do sistema) e bloqueando requisições com termos de risco de forma determinística.
@@ -45,15 +46,16 @@ Input Guardrail (Filtro de Entrada): Intercepta o prompt do utilizador antes do 
 Output Guardrail (Filtro de Saída): Um scanner pós-processamento que analisa o relatório homologado e mascara de forma autónoma dados sensíveis de identificação pessoal (PII) — como CPFs, RGs ou e-mails — garantindo privacidade absoluta na entrega final.
 
 ## 🛠️ **Stack Tecnológica**
-Python 3.10+
 
-LangGraph: Orquestração de fluxos cíclicos baseados em estados partilhados (AgentState).
+**Python 3.10+**
 
-LangChain Core & Community: Abstração de mensagens, tool binding e conectores comunitários.
+**LangGraph**: Orquestração de fluxos cíclicos baseados em estados partilhados (AgentState).
 
-ChatGroq (LLM Engine): Modelos de inferência de altíssima velocidade (Llama 3.3 70B / Llama 3 8B).
+**LangChain Core & Community**: Abstração de mensagens, tool binding e conectores comunitários.
 
-Streamlit: Interface web responsiva para renderização dos logs de execução e outputs.
+**ChatGroq (LLM Engine)**: Modelos de inferência de altíssima velocidade (Llama 3.3 70B / Llama 3 8B).
+
+**Streamlit**: Interface web responsiva para renderização dos logs de execução e outputs.
 
 
 ## 🚀 **Como Executar o Projeto**
@@ -73,13 +75,13 @@ Bash - python -m streamlit run app_agentes.py
 ## 📖 **Conceitos de Engenharia de IA Aplicados**
 Para fins de avaliação académica e portfólio corporativo, este projeto implementa e valida empiricamente:
 
-Stateful Multi-Agent Systems: Persistência e mutabilidade de contexto através de um objeto centralizado de mensagens.
+**Stateful Multi-Agent Systems**: Persistência e mutabilidade de contexto através de um objeto centralizado de mensagens.
 
-Deterministic vs Stochastic Control: União de segurança determinística (Regex/Strings) com cognição estocástica (LLM).
+**Deterministic vs Stochastic Control**: União de segurança determinística (Regex/Strings) com cognição estocástica (LLM).
 
-ReAct Framework (Reasoning and Acting): Paradigma onde o agente pensa o que precisa de fazer e executa ações por meio de ferramentas antes de responder.
+**ReAct Framework (Reasoning and Acting)**: Paradigma onde o agente pensa o que precisa de fazer e executa ações por meio de ferramentas antes de responder.
 
-Graceful Convergence: Lógica de travamento contra loops infinitos (circuit breaker) baseada em teto de iterações configurado no estado do grafo.
+**Graceful Convergence**: Lógica de travamento contra loops infinitos (circuit breaker) baseada em teto de iterações configurado no estado do grafo.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 Desenvolvido por Elder Moura como projeto avançado de Engenharia de Software e Inteligência Artificial.
