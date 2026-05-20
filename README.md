@@ -10,22 +10,25 @@ O sistema simula uma linha de produção corporativa inteligente, onde agentes e
 
 Diferente de sistemas rígidos, o fluxo de execução do **M.A.T.O** é determinado dinamicamente em tempo de execução pelas próprias LLMs através de nós e roteadores condicionais:
 
-```mermaid
 graph TD
-    Start([Início: Input do Usuário]) --> InGuard[Input Guardrail]
+    Start[Início: Input do Usuário] --> InGuard[Input Guardrail]
+    
     InGuard -- "Aprovado" --> Pesq[Nó Pesquisador]
-    InGuard -- "Bloqueado" --> EndErr([Fim: Erro de Segurança])
+    InGuard -- "Bloqueado" --> EndErr[Fim: Erro de Segurança]
     
     Pesq --> RotPesq{Roteador Pesquisador}
+    
     RotPesq -- "Precisa de Dados Recentes" --> ToolNode[Nó de Ferramentas: Search Web]
     ToolNode --> Pesq
+    
     RotPesq -- "Relatório Pronto" --> Rev[Nó Revisor / Auditor]
     
     Rev --> RotRev{Roteador Revisor}
-    RotRev -- "Reprovado (Feedback)" --> Pesq
+    
+    RotRev -- "Reprovado" --> Pesq
     RotRev -- "Aprovado" --> OutGuard[Output Guardrail]
     
-    OutGuard --> EndSuccess([Fim: Entrega Higienizada LGPD])
+    OutGuard --> EndSuccess[Fim: Entrega Higienizada LGPD]
 
 
 Nó Pesquisador (Persona Concomitante): Assume o papel da persona selecionada e rascunha a análise técnica profunda. Possui capacidade cognitiva de avaliar a sua própria falta de dados históricos (degradação de contexto) e solicitar acesso à internet.
