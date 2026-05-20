@@ -39,11 +39,11 @@ graph TD
 
 ## 🛡️ **Camada de Governança e Segurança: Guardrails**
 
-O projeto foi construído sob os pilares da segurança cibernética e conformidade regulatória com a LGPD (Lei Geral de Proteção de Dados):
+O projeto foi construído sob os pilares da segurança cibernética e conformidade regulatória com a **LGPD (Lei Geral de Proteção de Dados)**:
 
-Input Guardrail (Filtro de Entrada): Intercepta o prompt do utilizador antes do processamento da LLM, neutralizando ataques de Prompt Injection / Jailbreak (tentativas de subverter as regras do sistema) e bloqueando requisições com termos de risco de forma determinística.
+**Input Guardrail (Filtro de Entrada)**: Intercepta o prompt do utilizador antes do processamento da LLM, neutralizando ataques de Prompt Injection / Jailbreak (tentativas de subverter as regras do sistema) e bloqueando requisições com termos de risco de forma determinística.
 
-Output Guardrail (Filtro de Saída): Um scanner pós-processamento que analisa o relatório homologado e mascara de forma autónoma dados sensíveis de identificação pessoal (PII) — como CPFs, RGs ou e-mails — garantindo privacidade absoluta na entrega final.
+**Output Guardrail (Filtro de Saída)**: Um scanner pós-processamento que analisa o relatório homologado e mascara de forma autónoma dados sensíveis de identificação pessoal (PII) — como CPFs, RGs ou e-mails — garantindo privacidade absoluta na entrega final.
 
 ## 🛠️ **Stack Tecnológica**
 
