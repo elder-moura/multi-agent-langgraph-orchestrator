@@ -22,7 +22,7 @@ if "logs_agentes" not in st.session_state:
 if "metricas_monitoramento" not in st.session_state:
     st.session_state.metricas_monitoramento = None
 
-st.title("🤖 M.A.T.O - Multi-Agent Tech Orchestrator")
+st.title("🤖 Multi-Agent Tech Orchestrator")
 
 # ==========================================================
 # 2. CAMADA DE SEGURANÇA: GUARDRAILS DETERMINÍSTICOS
