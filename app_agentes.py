@@ -12,7 +12,7 @@ from langgraph.graph import StateGraph, END
 # ==========================================================
 # 1. CONFIGURAÇÃO DA INTERFACE E ESTADO DA SESSÃO
 # ==========================================================
-st.set_page_config(page_title="M.A.T.O - LangGraph Pro", layout="wide")
+st.set_page_config(page_title="LangGraph Pro", layout="wide")
 
 # Inicialização de estados da sessão para o monitoramento
 if "resultado_final" not in st.session_state:
